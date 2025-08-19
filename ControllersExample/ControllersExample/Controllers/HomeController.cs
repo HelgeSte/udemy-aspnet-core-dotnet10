@@ -17,7 +17,7 @@ namespace ControllersExample.Controllers;
             return "Hello from About";
         }
         
-        [Route("contact-us")]
+        [Route("contact-us/{mobile:regex(^\\d{{10}}$)}")]
         [Route("contact")]
         public string Contact()
         {
