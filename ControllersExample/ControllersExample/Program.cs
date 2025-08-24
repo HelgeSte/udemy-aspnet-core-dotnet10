@@ -5,6 +5,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 
 var app = builder.Build();
+app.UseStaticFiles(); // default webroot = wwwroot
 
 // Required for activating the HomeController and other controllers
 app.MapControllers();
