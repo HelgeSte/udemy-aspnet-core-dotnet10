@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
 namespace IActionResultExample.Controllers;
@@ -12,31 +13,35 @@ public class HomeController : Controller
         // Book id should be applied
         if (!Request.Query.ContainsKey("bookid"))
         {
-            return Content("Book id is not supplied");  
+            // Status codes: 400 = bad request, 401 = unauthorized, 500 = internal server error, etc.
+            //return Content("Book id is not supplied");  
+            //return new BadRequestResult(){}; // return an object
+            return BadRequest("Book id is not supplied"); // return a method
         }
 
         if (string.IsNullOrEmpty(Convert.ToString(Request.Query["bookid"])))
         {
-            return Content("Book id can't be null or empty");
+            return BadRequest("Book id can't be null or empty");
         }
         
         // Bookd id should be between 1 and 1000
         int bookId = Convert.ToInt16(ControllerContext.HttpContext.Request.Query["bookid"]);
         if (bookId <= 0)
         {
+            Response.StatusCode = 505; 
             return Content("Book id can't be less than or equal to Zero");
         }
 
         if (bookId > 1000)
         {
-            return Content("Book id can't be greater than 1000");
+            // Treating this as a NotFound (404) error
+            return NotFound("Book id can't be greater than 1000");
         }
         
         // isLoggedin should be tru
         if (Convert.ToBoolean(Request.Query["isloggedin"]) == false)
         {
-            Response.StatusCode = 401;
-            return Content("User must be authenticated");
+            return Unauthorized("User must be authenticated");
         }
 
         return File("/sample.pdf",  "application/pdf");
