@@ -26,3 +26,4 @@ E:\gitkraken-repos\udemy-aspnet-core-dotnet10\ControllersExample\ControllersExam
 E:\gitkraken-repos\udemy-aspnet-core-dotnet10\ControllersExample\ControllersExample\obj\Debug\net10.0\ControllersExample.pdb
 E:\gitkraken-repos\udemy-aspnet-core-dotnet10\ControllersExample\ControllersExample\obj\Debug\net10.0\ControllersExample.genruntimeconfig.cache
 E:\gitkraken-repos\udemy-aspnet-core-dotnet10\ControllersExample\ControllersExample\obj\Debug\net10.0\ref\ControllersExample.dll
+E:\gitkraken-repos\udemy-aspnet-core-dotnet10\ControllersExample\ControllersExample\bin\Debug\net10.0\ControllersExample.staticwebassets.runtime.json
