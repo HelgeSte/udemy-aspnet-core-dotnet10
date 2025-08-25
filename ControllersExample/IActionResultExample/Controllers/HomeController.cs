@@ -28,8 +28,9 @@ public class HomeController : Controller
         int bookId = Convert.ToInt16(ControllerContext.HttpContext.Request.Query["bookid"]);
         if (bookId <= 0)
         {
-            Response.StatusCode = 505; 
-            return Content("Book id can't be less than or equal to Zero");
+            //Response.StatusCode = 505; 
+            //return Content("Book id can't be less than or equal to Zero");
+            return StatusCode(505);
         }
 
         if (bookId > 1000)
