@@ -5,17 +5,17 @@ namespace IActionResultExample.Controllers;
 
 public class HomeController : Controller
 {
-    [Route("book")]
-    // GET
-    //public FileResult Index() // cannot use return Content()
+    [Route("bookstore")]
+    /* GET
+    //public FileResult Index() // cannot use return Content() */
     public IActionResult Index() // Can return both Content() and File() results 
     {
         // Book id should be applied
         if (!Request.Query.ContainsKey("bookid"))
         {
-            // Status codes: 400 = bad request, 401 = unauthorized, 500 = internal server error, etc.
+            /* Status codes: 400 = bad request, 401 = unauthorized, 500 = internal server error, etc.
             //return Content("Book id is not supplied");  
-            //return new BadRequestResult(){}; // return an object
+            //return new BadRequestResult(){}; // return an object */
             return BadRequest("Book id is not supplied"); // return a method
         }
 
@@ -28,23 +28,23 @@ public class HomeController : Controller
         int bookId = Convert.ToInt16(ControllerContext.HttpContext.Request.Query["bookid"]);
         if (bookId <= 0)
         {
-            //Response.StatusCode = 505; 
-            //return Content("Book id can't be less than or equal to Zero");
-            return StatusCode(505);
+            /*Response.StatusCode = 505; 
+            //return Content("Book id can't be less than or equal to Zero");*/
+            return StatusCode(401);
         }
-
         if (bookId > 1000)
         {
             // Treating this as a NotFound (404) error
             return NotFound("Book id can't be greater than 1000");
         }
         
-        // isLoggedin should be tru
         if (Convert.ToBoolean(Request.Query["isloggedin"]) == false)
         {
             return Unauthorized("User must be authenticated");
         }
 
-        return File("/sample.pdf",  "application/pdf");
+        //return File("/sample.pdf",  "application/pdf");
+        // RedirectToActionResult(<action-method-name>, <controller-name>, <classless object / anynymous object>, <permanent: true (301) / false (302)>);
+        return new RedirectToActionResult("Books", "Store", new { }, true);
     }
 }
