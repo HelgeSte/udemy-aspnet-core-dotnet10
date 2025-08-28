@@ -1,0 +1,20 @@
+# Rider specific files
+.idea/
+*.sln.iml
+*.user
+# Build directories
+bin/
+obj/
+out/
+# Temporary files
+*.tmp
+*.log
+*.cache
+# User-specific settings
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+.idea/**/usage.statistics.xml
+# Other common ignores
+*.vs/
+*.db
+*.DS_Store
