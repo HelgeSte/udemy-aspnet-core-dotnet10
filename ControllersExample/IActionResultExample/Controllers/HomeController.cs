@@ -45,6 +45,9 @@ public class HomeController : Controller
 
         //return File("/sample.pdf",  "application/pdf");
         // RedirectToActionResult(<action-method-name>, <controller-name>, <classless object / anynymous object>, <permanent: true (301) / false (302)>);
-        return new RedirectToActionResult("Books", "Store", new { }, true);
+        //return new RedirectToActionResult("Books", "Store", new { }, true);
+        //return RedirectToActionPermanent("Books", "Store", new { id = bookId });
+        //return new LocalRedirectResult($"store/books/{bookId}"); // cannot redirect to another application
+        return LocalRedirectPermanent($"~/store/books/{bookId}"); // cannot redirect to another application
     }
 }
