@@ -4,3 +4,5 @@
 *.exe
 
 ControllersExample/IActionResultExample/bin/
+
+ControllersExample/IActionResultExample/obj/

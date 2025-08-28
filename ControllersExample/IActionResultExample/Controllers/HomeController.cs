@@ -6,16 +6,11 @@ namespace IActionResultExample.Controllers;
 public class HomeController : Controller
 {
     [Route("bookstore")]
-    /* GET
-    //public FileResult Index() // cannot use return Content() */
+    //Url: /bookstore?bookid=10&isloggedin=true
     public IActionResult Index() // Can return both Content() and File() results 
     {
-        // Book id should be applied
         if (!Request.Query.ContainsKey("bookid"))
         {
-            /* Status codes: 400 = bad request, 401 = unauthorized, 500 = internal server error, etc.
-            //return Content("Book id is not supplied");  
-            //return new BadRequestResult(){}; // return an object */
             return BadRequest("Book id is not supplied"); // return a method
         }
 
@@ -28,9 +23,7 @@ public class HomeController : Controller
         int bookId = Convert.ToInt16(ControllerContext.HttpContext.Request.Query["bookid"]);
         if (bookId <= 0)
         {
-            /*Response.StatusCode = 505; 
-            //return Content("Book id can't be less than or equal to Zero");*/
-            return StatusCode(401);
+             return StatusCode(401);
         }
         if (bookId > 1000)
         {
