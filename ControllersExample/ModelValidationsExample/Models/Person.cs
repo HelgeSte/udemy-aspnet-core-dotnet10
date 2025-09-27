@@ -8,7 +8,9 @@ public class Person
 {
     [BindNever]
     public int? Age { get; set; }
-  
+
+    public List<string?> Tags { get; set; } = new List<string?>();
+
     [Required(ErrorMessage = "{0} can't be empty or null")]
     [Display(Name = "Person Name")]
     [StringLength(40, MinimumLength = 3, ErrorMessage = "{0} is not between {2} tp {1} characters")]
