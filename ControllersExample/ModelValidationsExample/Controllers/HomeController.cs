@@ -11,7 +11,8 @@ public class HomeController : Controller
     // body section, and model binding will add the data to the Person object. 
     [Route("register")] 
     /* [ModelBinder(typeof(PersonModelBinder))] <- isn't needed after we created the PersonBinderProvider class */
-    public IActionResult Index(Person person)
+    public IActionResult Index(Person person,
+        [FromHeader(Name = "User-Agent")] string userAgent)
     {
         if (!ModelState.IsValid)
         {
@@ -31,6 +32,6 @@ public class HomeController : Controller
             // var errors = string.Join("\n", errorsList);
             return BadRequest(errors);
         }
-        return Content($"{person}");
+        return Content($"{person}, {userAgent}");
     }
 }
