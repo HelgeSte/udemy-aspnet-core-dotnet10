@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IActionResultExample", "IAc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelValidationsExample", "ModelValidationsExample\ModelValidationsExample.csproj", "{EB2FB488-92EB-4AAA-B130-0533C38D001C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eCommerceProject", "eCommerceProject\eCommerceProject.csproj", "{CE31678E-D4C9-4A96-A0B6-0DC91CCD2811}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{EB2FB488-92EB-4AAA-B130-0533C38D001C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB2FB488-92EB-4AAA-B130-0533C38D001C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EB2FB488-92EB-4AAA-B130-0533C38D001C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE31678E-D4C9-4A96-A0B6-0DC91CCD2811}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE31678E-D4C9-4A96-A0B6-0DC91CCD2811}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE31678E-D4C9-4A96-A0B6-0DC91CCD2811}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE31678E-D4C9-4A96-A0B6-0DC91CCD2811}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

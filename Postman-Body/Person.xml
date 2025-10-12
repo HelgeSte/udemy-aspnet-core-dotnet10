@@ -1,5 +1,5 @@
 <Person>
-        <PersonName>Scott</PersonName>
+        <PersonName>Scott XML</PersonName>
         <Email>scott@example.com</Email>
         <ConfirmEmail>scott@example.com</ConfirmEmail>
         <Password>Secret-123</Password>

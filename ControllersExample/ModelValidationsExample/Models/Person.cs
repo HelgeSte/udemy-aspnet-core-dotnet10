@@ -84,7 +84,7 @@ public class Person
                $"{this.DateOfBirth}," +
                $"{this.Phone}," +
                $"{this.Price}," +
-               $"{this.Tags[0]}," +
-               $"{this.Tags[1]}";
+               $"{this.Tags[1]}," +
+               $"{this.Tags[0]}";
     }
 }
