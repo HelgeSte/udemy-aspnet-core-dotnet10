@@ -1,0 +1,11 @@
+{
+    "PersonName": "Scott", 
+    "Email": "scott@example.com",
+    "ConfirmEmail": "scott@example.com",
+    "Password": "Secret-123",
+    "ConfirmPassword": "Secret-123",
+    "Phone": "12345567890",
+    "DateOfBirth": "2001-01-01",
+    "Age": 30,
+    "Price": 100
+}

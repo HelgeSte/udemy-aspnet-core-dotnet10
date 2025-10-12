@@ -1,0 +1,15 @@
+<Person>
+        <PersonName>Scott</PersonName>
+        <Email>scott@example.com</Email>
+        <ConfirmEmail>scott@example.com</ConfirmEmail>
+        <Password>Secret-123</Password>
+        <ConfirmPassword>Secret-123</ConfirmPassword>
+        <Phone>12345567890</Phone>
+        <DateOfBirth>2001-01-01</DateOfBirth>
+        <Age>30</Age>
+        <Price>100</Price>
+        <Tags>
+            <string>tag1</string>
+            <string>tag2</string>
+        </Tags>
+</Person>

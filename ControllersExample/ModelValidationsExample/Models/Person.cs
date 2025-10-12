@@ -33,7 +33,7 @@ public class Person
     public string? Password { get; set; }
     
     [Required(ErrorMessage = "{0} can't be blank")]
-    [RegularExpression("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[!@#$%^&*])(?=.{8,}).*$")]
+    [RegularExpression("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[!@#$%^&*-])(?=.{8,}).*$")]
     // Can replace (?=.{8,}).*$ with MinLenght(8)
     [MinLength(10, ErrorMessage = "{0} must be at least 10 characters")]
     [Compare("Password", ErrorMessage = "Passwords do not match")]
@@ -79,6 +79,12 @@ public class Person
 
     public override string ToString()
     {
-        return $"Person object - Person name:: {PersonName}, Email: {Email}, Phone: {Phone}, Password: {Password}, ConfirmPassword: {ConfirmPassword},  Price: {Price}, Age: {Age}";
+        return $"{this.PersonName}," +
+               $"{this.Email}," +
+               $"{this.DateOfBirth}," +
+               $"{this.Phone}," +
+               $"{this.Price}," +
+               $"{this.Tags[0]}," +
+               $"{this.Tags[1]}";
     }
 }
